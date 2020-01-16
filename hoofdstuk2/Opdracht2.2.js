@@ -1,0 +1,1 @@
+document.getElementById("bl1").innerHTML
