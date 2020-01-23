@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>crookapp</title>
+</head>
+<style>
+    #slideholder {
+        height: 300px;
+        width: 300px;
+    }
+    #slideholder2 {
+        height: 300px;
+        width: 300px;
+    }
+    #slideholder3 {
+        height: 300px;
+        width:300px;
+    }
+    body {
+        background-color:pink;
+        text-align:center;
+    }
+    h1 {
+        text-align: center;
+    }
+</style>
+<body>
+<h1> De Crook App</h1>
+<div id="wrapper">
+<div id="slideholder"></div>
+<div id="slideholder2"></div>
+<div id="slideholder3"></div>
+</div>
+<script>
+    var plaatjes = [1,2,3];
+    var teller = 0;
+    var slideholder = document.getElementById("slideholder");
+    slideholder.style.backgroundImage =" url('../img/hond1.jpg')";
+
+    slideholder.addEventListener("click", function() {
+        slideholder.style.backgroundImage =" url('../img/hond" + getHond() + ".jpg')";
+
+    });
+
+    var plaatjes2 = [1,2,3];
+    var teller2 = 0;
+    var slideholder2 = document.getElementById("slideholder2");
+    slideholder2.style.backgroundImage =" url('../img/auto1.jpg')";
+
+    slideholder2.addEventListener("click", function() {
+        slideholder2.style.backgroundImage =" url('../img/auto" + getAuto() + ".jpg')";
+
+    });
+
+    var plaatjes3 = [1,2,3];
+    var teller3 = 0;
+    var slideholder3 = document.getElementById("slideholder3");
+    slideholder3.style.backgroundImage =" url('../img/banaan1.jpg')";
+
+    slideholder3.addEventListener("click", function() {
+        slideholder3.style.backgroundImage =" url('../img/banaan" + getBanaan() + ".jpg')";
+
+    });
+
+    function getBanaan() {
+        if(teller3 >= plaatjes3.length) {
+            teller3 = plaatjes3[0];
+        } else {
+            teller3++
+        }
+        console.log(teller3);
+        return teller3;
+    }
+
+
+    function getAuto() {
+        if(teller2 >= plaatjes2.length) {
+            teller2 = plaatjes2[0];
+        } else {
+            teller2++
+        }
+        console.log(teller2);
+        return teller2;
+    }
+
+    function getHond() {
+        if(teller >= plaatjes.length) {
+            teller = plaatjes[0];
+        } else {
+            teller++
+        }
+        console.log(teller);
+        return teller;
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

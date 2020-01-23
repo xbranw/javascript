@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>imageslider</title>
+</head>
+<style>
+    #slide {
+        height:300px;
+        width:300px;
+        border: 3px black solid;
+        transition:2s;
+    }
+</style>
+<body>
+<div id="slide"></div>
+    <script>
+        var plaatjes = [1,2,3,4,5,6,7,8,9];
+        var teller = 0;
+        var slide = document.getElementById("slide");
+        slide.style.backgroundImage ="url('../img/hond1.jpg')";
+
+        slide.addEventListener("click", function() {
+            slide.style.backgroundImage ="url('../img/hond"+ getHond() + ".jpg')";
+        });
+
+        function getHond(){
+            if(teller >= plaatjes.length) {
+                teller = 1;
+            } else {
+                teller++;
+            }
+            console.log(teller);
+            return teller;
+        }
+    </script>
+
+
+</body>
+</html>
